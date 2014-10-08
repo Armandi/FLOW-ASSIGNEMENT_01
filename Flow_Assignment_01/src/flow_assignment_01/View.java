@@ -28,35 +28,92 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        viewLabel = new javax.swing.JLabel();
-        viewBackButton = new javax.swing.JButton();
-        viewRegisterButton = new javax.swing.JButton();
-        viewEditSelectedButton = new javax.swing.JButton();
+        personProfiles = new javax.swing.JLabel();
+        name = new javax.swing.JLabel();
+        administrator = new javax.swing.JLabel();
+        analyst = new javax.swing.JLabel();
+        finisher = new javax.swing.JLabel();
+        creative = new javax.swing.JLabel();
+        comments = new javax.swing.JLabel();
+        viewAddButton = new javax.swing.JButton();
+        viewEditButton = new javax.swing.JButton();
+        viewDeleteButton = new javax.swing.JButton();
+        viewSaveButton = new javax.swing.JButton();
+        loadButton = new javax.swing.JButton();
+        nameTF = new javax.swing.JTextField();
+        administratorTF = new javax.swing.JTextField();
+        analystTF = new javax.swing.JTextField();
+        creativeTF = new javax.swing.JTextField();
+        finisherTF = new javax.swing.JTextField();
+        commentsTF = new javax.swing.JTextField();
         viewTable = new javax.swing.JScrollPane();
         viewPersonsTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 600));
 
-        viewLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        viewLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        viewLabel.setText("View");
+        personProfiles.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        personProfiles.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        personProfiles.setText("Person profiles");
 
-        viewBackButton.setText("<-- BACK");
-        viewBackButton.addActionListener(new java.awt.event.ActionListener() {
+        name.setText("Name:");
+
+        administrator.setText("Administrator:");
+
+        analyst.setText("Analyst:");
+
+        finisher.setText("Finisher:");
+
+        creative.setText("Creative:");
+
+        comments.setText("Comments");
+
+        viewAddButton.setText("Add");
+        viewAddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewBackButtonActionPerformed(evt);
+                viewAddButtonActionPerformed(evt);
             }
         });
 
-        viewRegisterButton.setText("REGISTER -->");
-        viewRegisterButton.addActionListener(new java.awt.event.ActionListener() {
+        viewEditButton.setText("Edit");
+        viewEditButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewRegisterButtonActionPerformed(evt);
+                viewEditButtonActionPerformed(evt);
             }
         });
 
-        viewEditSelectedButton.setText("EDIT / VIEW SELECTED");
+        viewDeleteButton.setText("Delete");
+
+        viewSaveButton.setText("Save");
+
+        loadButton.setText("Load");
+        loadButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                loadButtonActionPerformed(evt);
+            }
+        });
+
+        nameTF.setText("Name");
+
+        administratorTF.setText("1-30");
+
+        analystTF.setText("1-30");
+        analystTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                analystTFActionPerformed(evt);
+            }
+        });
+
+        creativeTF.setText("1-30");
+        creativeTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                creativeTFActionPerformed(evt);
+            }
+        });
+
+        finisherTF.setText("1-30");
+
+        commentsTF.setText("Write your comment here...");
 
         viewPersonsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -78,56 +135,128 @@ public class View extends javax.swing.JFrame {
             }
         });
         viewTable.setViewportView(viewPersonsTable);
+        if (viewPersonsTable.getColumnModel().getColumnCount() > 0) {
+            viewPersonsTable.getColumnModel().getColumn(0).setHeaderValue("NAME");
+            viewPersonsTable.getColumnModel().getColumn(1).setHeaderValue("ADMINISTRATOR");
+            viewPersonsTable.getColumnModel().getColumn(2).setHeaderValue("ANALYST");
+            viewPersonsTable.getColumnModel().getColumn(3).setHeaderValue("CREATIVE");
+            viewPersonsTable.getColumnModel().getColumn(4).setHeaderValue("FINISHER");
+            viewPersonsTable.getColumnModel().getColumn(5).setHeaderValue("COMMENTS");
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(personProfiles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(viewTable)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(viewBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(viewRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(viewLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(viewEditSelectedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap()))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(name)
+                                    .addComponent(administrator)
+                                    .addComponent(analyst, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(analystTF, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                                            .addComponent(administratorTF))
+                                        .addGap(22, 22, 22)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(creative)
+                                            .addComponent(finisher))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(creativeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(finisherTF, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(comments)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(commentsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(viewAddButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(viewEditButton)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(viewDeleteButton))
+                                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 30, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(viewSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(viewLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(personProfiles)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewBackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(viewTable, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(viewEditSelectedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(name))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(administratorTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(administrator)
+                            .addComponent(creative)
+                            .addComponent(creativeTF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(analystTF)
+                            .addComponent(finisher)
+                            .addComponent(finisherTF)
+                            .addComponent(analyst))
+                        .addGap(24, 24, 24))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(comments)
+                            .addComponent(commentsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(viewDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(viewTable, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(viewSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBackButtonActionPerformed
+    private void viewEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEditButtonActionPerformed
         this.setVisible(false);
         new Flow_Main().setVisible(true);
-    }//GEN-LAST:event_viewBackButtonActionPerformed
+    }//GEN-LAST:event_viewEditButtonActionPerformed
 
-    private void viewRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRegisterButtonActionPerformed
-this.setVisible(false);
-new Register().setVisible(true);
-    }//GEN-LAST:event_viewRegisterButtonActionPerformed
+    private void viewAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAddButtonActionPerformed
+
+    }//GEN-LAST:event_viewAddButtonActionPerformed
+
+    private void loadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_loadButtonActionPerformed
+
+    private void analystTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analystTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_analystTFActionPerformed
+
+    private void creativeTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_creativeTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_creativeTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -165,11 +294,25 @@ new Register().setVisible(true);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton viewBackButton;
-    private javax.swing.JButton viewEditSelectedButton;
-    private javax.swing.JLabel viewLabel;
+    private javax.swing.JLabel administrator;
+    private javax.swing.JTextField administratorTF;
+    private javax.swing.JLabel analyst;
+    private javax.swing.JTextField analystTF;
+    private javax.swing.JLabel comments;
+    private javax.swing.JTextField commentsTF;
+    private javax.swing.JLabel creative;
+    private javax.swing.JTextField creativeTF;
+    private javax.swing.JLabel finisher;
+    private javax.swing.JTextField finisherTF;
+    private javax.swing.JButton loadButton;
+    private javax.swing.JLabel name;
+    private javax.swing.JTextField nameTF;
+    private javax.swing.JLabel personProfiles;
+    private javax.swing.JButton viewAddButton;
+    private javax.swing.JButton viewDeleteButton;
+    private javax.swing.JButton viewEditButton;
     private javax.swing.JTable viewPersonsTable;
-    private javax.swing.JButton viewRegisterButton;
+    private javax.swing.JButton viewSaveButton;
     private javax.swing.JScrollPane viewTable;
     // End of variables declaration//GEN-END:variables
 }
