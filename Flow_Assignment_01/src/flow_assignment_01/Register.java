@@ -6,6 +6,8 @@
 
 package flow_assignment_01;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Armandi
@@ -40,10 +42,9 @@ public class Register extends javax.swing.JFrame {
         creativeTF = new javax.swing.JTextField();
         finisherLabel = new javax.swing.JLabel();
         finisherTF = new javax.swing.JTextField();
-        Comment = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         saveButton = new javax.swing.JButton();
         deleteButton = new javax.swing.JButton();
+        commentTF = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -99,11 +100,6 @@ public class Register extends javax.swing.JFrame {
 
         finisherTF.setText("1-30");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Write you comments here...");
-        Comment.setViewportView(jTextArea1);
-
         saveButton.setText("Save");
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +111,14 @@ public class Register extends javax.swing.JFrame {
         deleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteButtonActionPerformed(evt);
+            }
+        });
+
+        commentTF.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        commentTF.setText("Write your comments here...");
+        commentTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                commentTFActionPerformed(evt);
             }
         });
 
@@ -150,8 +154,8 @@ public class Register extends javax.swing.JFrame {
                         .addComponent(registerLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Comment, javax.swing.GroupLayout.PREFERRED_SIZE, 776, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(commentTF, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -187,8 +191,8 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(finisherLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(creativeTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(Comment, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(commentTF, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(deleteButton, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
@@ -228,6 +232,10 @@ public class Register extends javax.swing.JFrame {
         new View().setVisible(true); 
     }//GEN-LAST:event_registerViewButtomActionPerformed
 
+    private void commentTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_commentTFActionPerformed
+        
+    }//GEN-LAST:event_commentTFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -264,18 +272,17 @@ public class Register extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane Comment;
     private javax.swing.JLabel administratorLabel;
     private javax.swing.JTextField administratorTF;
     private javax.swing.JLabel analystLabel;
     private javax.swing.JTextField analystTF;
+    private javax.swing.JTextField commentTF;
     private javax.swing.JLabel creativeLabel;
     private javax.swing.JTextField creativeTF;
     private javax.swing.JButton deleteButton;
     private javax.swing.JLabel finisherLabel;
     private javax.swing.JTextField finisherTF;
     private javax.swing.JTextField firstNameTF;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton registerBackButtom;
     private javax.swing.JLabel registerLabel;
     private javax.swing.JButton registerViewButtom;
