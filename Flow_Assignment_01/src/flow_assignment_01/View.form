@@ -40,12 +40,10 @@
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="viewLabel" min="-2" pref="800" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="viewEditSelectedButton" min="-2" pref="380" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="viewAddToTeamButton" min="-2" pref="380" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -66,10 +64,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="viewTable" pref="421" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="viewEditSelectedButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                  <Component id="viewAddToTeamButton" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-              </Group>
+              <Component id="viewEditSelectedButton" min="-2" pref="40" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -89,24 +84,22 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;-- BACK"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewBackButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewRegisterButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="REGISTER --&gt;"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewRegisterButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewEditSelectedButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="EDIT / VIEW SELECTED"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="viewAddToTeamButton">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ADD TO TEAM"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewAddToTeamButtonActionPerformed"/>
-      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="viewTable">
       <AuxValues>

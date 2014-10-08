@@ -32,7 +32,6 @@ public class View extends javax.swing.JFrame {
         viewBackButton = new javax.swing.JButton();
         viewRegisterButton = new javax.swing.JButton();
         viewEditSelectedButton = new javax.swing.JButton();
-        viewAddToTeamButton = new javax.swing.JButton();
         viewTable = new javax.swing.JScrollPane();
         viewPersonsTable = new javax.swing.JTable();
 
@@ -44,17 +43,20 @@ public class View extends javax.swing.JFrame {
         viewLabel.setText("View");
 
         viewBackButton.setText("<-- BACK");
-
-        viewRegisterButton.setText("REGISTER -->");
-
-        viewEditSelectedButton.setText("EDIT / VIEW SELECTED");
-
-        viewAddToTeamButton.setText("ADD TO TEAM");
-        viewAddToTeamButton.addActionListener(new java.awt.event.ActionListener() {
+        viewBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewAddToTeamButtonActionPerformed(evt);
+                viewBackButtonActionPerformed(evt);
             }
         });
+
+        viewRegisterButton.setText("REGISTER -->");
+        viewRegisterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewRegisterButtonActionPerformed(evt);
+            }
+        });
+
+        viewEditSelectedButton.setText("EDIT / VIEW SELECTED");
 
         viewPersonsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -92,12 +94,10 @@ public class View extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(viewRegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap())
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(viewLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 800, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(viewEditSelectedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(viewAddToTeamButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap()))))
         );
         layout.setVerticalGroup(
@@ -112,18 +112,22 @@ public class View extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(viewTable, javax.swing.GroupLayout.DEFAULT_SIZE, 421, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewEditSelectedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(viewAddToTeamButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(viewEditSelectedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewAddToTeamButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAddToTeamButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_viewAddToTeamButtonActionPerformed
+    private void viewBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBackButtonActionPerformed
+        this.setVisible(false);
+        new Flow_Main().setVisible(true);
+    }//GEN-LAST:event_viewBackButtonActionPerformed
+
+    private void viewRegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRegisterButtonActionPerformed
+this.setVisible(false);
+new Register().setVisible(true);
+    }//GEN-LAST:event_viewRegisterButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -161,7 +165,6 @@ public class View extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton viewAddToTeamButton;
     private javax.swing.JButton viewBackButton;
     private javax.swing.JButton viewEditSelectedButton;
     private javax.swing.JLabel viewLabel;
