@@ -10,6 +10,8 @@ public class LoadSave {
     
     public static void main(String[] args) {
         
+        //Person persA = new Person("Bob",12,8,5,5);
+        
         String p1 = "Jack,14,4,2,6";
         String p2 = "Mary,10,9,5,1";
         
