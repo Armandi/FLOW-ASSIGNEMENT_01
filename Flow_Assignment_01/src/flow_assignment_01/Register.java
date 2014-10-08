@@ -60,6 +60,11 @@ public class Register extends javax.swing.JFrame {
         });
 
         registerViewButtom.setText(" View -->");
+        registerViewButtom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                registerViewButtomActionPerformed(evt);
+            }
+        });
 
         firstNameTF.setText("Name");
         firstNameTF.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +199,8 @@ public class Register extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void registerBackButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBackButtomActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new Flow_Main().setVisible(true);
     }//GEN-LAST:event_registerBackButtomActionPerformed
 
     private void analystTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analystTFActionPerformed
@@ -216,6 +222,11 @@ public class Register extends javax.swing.JFrame {
     private void administratorTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administratorTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_administratorTFActionPerformed
+
+    private void registerViewButtomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerViewButtomActionPerformed
+        this.setVisible(false);
+        new View().setVisible(true); 
+    }//GEN-LAST:event_registerViewButtomActionPerformed
 
     /**
      * @param args the command line arguments
