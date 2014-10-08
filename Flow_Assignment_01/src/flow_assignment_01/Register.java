@@ -32,7 +32,6 @@ public class Register extends javax.swing.JFrame {
         registerBackButtom = new javax.swing.JButton();
         registerViewButtom = new javax.swing.JButton();
         firstNameTF = new javax.swing.JTextField();
-        lastNameTF = new javax.swing.JTextField();
         administratorLabel = new javax.swing.JLabel();
         administratorTF = new javax.swing.JTextField();
         analystLabel = new javax.swing.JLabel();
@@ -47,7 +46,6 @@ public class Register extends javax.swing.JFrame {
         deleteButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 600));
 
         registerLabel.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         registerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -63,9 +61,12 @@ public class Register extends javax.swing.JFrame {
 
         registerViewButtom.setText(" View -->");
 
-        firstNameTF.setText("First Name");
-
-        lastNameTF.setText("Last Name");
+        firstNameTF.setText("Name");
+        firstNameTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameTFActionPerformed(evt);
+            }
+        });
 
         administratorLabel.setText("Administrator:");
 
@@ -116,7 +117,6 @@ public class Register extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lastNameTF, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(firstNameTF, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(registerBackButtom, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
@@ -158,15 +158,14 @@ public class Register extends javax.swing.JFrame {
                     .addComponent(registerViewButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registerBackButtom, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(firstNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(administratorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(administratorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(administratorTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(firstNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(administratorLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lastNameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(analystTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(analystTF, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(analystLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -204,6 +203,10 @@ public class Register extends javax.swing.JFrame {
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void firstNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,7 +256,6 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JTextField finisherTF;
     private javax.swing.JTextField firstNameTF;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField lastNameTF;
     private javax.swing.JButton registerBackButtom;
     private javax.swing.JLabel registerLabel;
     private javax.swing.JButton registerViewButtom;
