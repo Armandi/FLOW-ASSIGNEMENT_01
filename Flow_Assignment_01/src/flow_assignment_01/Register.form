@@ -87,12 +87,10 @@
                   <Component id="registerBackButtom" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="firstNameTF" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                  <Component id="administratorLabel" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="administratorTF" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="firstNameTF" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                      <Component id="administratorLabel" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
