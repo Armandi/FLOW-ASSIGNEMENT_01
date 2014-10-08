@@ -50,3 +50,23 @@ public class Flow_Assignment_01 {
         }
     }
 }
+
+DefaultTableModel model;
+//place around public class...
+model = (DefaultTableModel)viewPersonsTable.getModel();
+
+
+//actionperformed add
+model.insertRow(model.getRowCount(), new Object[]{nameTF.getText(), administratorTF.getText(), analystTF.getText(), creativeTF.getText(), finisherTF.getText(), commentsTF.getText()});
+
+
+//actionperformed edit
+
+
+//put your table to event, mouse clicked.
+nameTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 0)));
+administratorTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 1)));
+analystTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 2)));
+creativeTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 3)));
+finisherTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 4)));
+commentsTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 5)));
