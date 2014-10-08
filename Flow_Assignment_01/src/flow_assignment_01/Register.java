@@ -71,6 +71,11 @@ public class Register extends javax.swing.JFrame {
         administratorLabel.setText("Administrator:");
 
         administratorTF.setText("1-30");
+        administratorTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                administratorTFActionPerformed(evt);
+            }
+        });
 
         analystLabel.setText("Analyst:");
 
@@ -207,6 +212,10 @@ public class Register extends javax.swing.JFrame {
     private void firstNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTFActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_firstNameTFActionPerformed
+
+    private void administratorTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administratorTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_administratorTFActionPerformed
 
     /**
      * @param args the command line arguments

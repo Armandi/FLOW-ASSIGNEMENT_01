@@ -44,6 +44,11 @@ public class Flow_Main extends javax.swing.JFrame {
 
         mainButtomRegister.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         mainButtomRegister.setText("Register");
+        mainButtomRegister.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mainButtomRegisterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -70,8 +75,14 @@ public class Flow_Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mainButtomViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButtomViewActionPerformed
-        // TODO add your handling code here:
+        this.setVisible(false);
+        new View().setVisible(true);
     }//GEN-LAST:event_mainButtomViewActionPerformed
+
+    private void mainButtomRegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainButtomRegisterActionPerformed
+        this.setVisible(false);
+        new Register().setVisible(true);
+    }//GEN-LAST:event_mainButtomRegisterActionPerformed
 
     /**
      * @param args the command line arguments
