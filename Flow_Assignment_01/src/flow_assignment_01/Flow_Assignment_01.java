@@ -17,11 +17,12 @@ public class Flow_Assignment_01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Person persA = new Person("Anton", 12, 12, 4, 2);
+        Person persA = new Person("Anton", 12, 12, 4, 2,"I like cake");
         System.out.println("Person A printet: " + persA.toString());
-        String p1 = "Bob,12,4,5,6";
-        String p2 = "Linda,4,12,5,6";
-        String p3 = "Zebra,55,212,25,26";
+        String p1 = "Bob,12,4,5,6,I like cake";
+        String p2 = "Linda,4,12,5,6,I like cake";
+        String p3 = "Zebra,55,212,25,26,I like cake";
+        
         ArrayList<String> personList = new ArrayList<String>(); //Making a new Arraylist of string object
 //Adding people strings:
         personList.add(p1);

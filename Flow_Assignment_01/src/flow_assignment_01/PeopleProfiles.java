@@ -6,6 +6,7 @@
 
 package flow_assignment_01;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -37,11 +38,12 @@ public class PeopleProfiles extends javax.swing.JFrame {
         finisher = new javax.swing.JLabel();
         creative = new javax.swing.JLabel();
         comments = new javax.swing.JLabel();
-        viewAddButton = new javax.swing.JButton();
-        viewEditButton = new javax.swing.JButton();
-        viewDeleteButton = new javax.swing.JButton();
-        viewSaveButton = new javax.swing.JButton();
+        AddButton = new javax.swing.JButton();
+        EditButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
+        SaveButton = new javax.swing.JButton();
         loadButton = new javax.swing.JButton();
+        printButton = new javax.swing.JButton();
         nameTF = new javax.swing.JTextField();
         administratorTF = new javax.swing.JTextField();
         analystTF = new javax.swing.JTextField();
@@ -70,33 +72,40 @@ public class PeopleProfiles extends javax.swing.JFrame {
 
         comments.setText("Comments");
 
-        viewAddButton.setText("Add");
-        viewAddButton.addActionListener(new java.awt.event.ActionListener() {
+        AddButton.setText("Add");
+        AddButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewAddButtonActionPerformed(evt);
+                AddButtonActionPerformed(evt);
             }
         });
 
-        viewEditButton.setText("Edit");
-        viewEditButton.addActionListener(new java.awt.event.ActionListener() {
+        EditButton.setText("Edit");
+        EditButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewEditButtonActionPerformed(evt);
+                EditButtonActionPerformed(evt);
             }
         });
 
-        viewDeleteButton.setText("Delete");
-        viewDeleteButton.addActionListener(new java.awt.event.ActionListener() {
+        DeleteButton.setText("Delete");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                viewDeleteButtonActionPerformed(evt);
+                DeleteButtonActionPerformed(evt);
             }
         });
 
-        viewSaveButton.setText("Save");
+        SaveButton.setText("Save");
 
         loadButton.setText("Load");
         loadButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 loadButtonActionPerformed(evt);
+            }
+        });
+
+        printButton.setText("Print");
+        printButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                printButtonActionPerformed(evt);
             }
         });
 
@@ -120,6 +129,7 @@ public class PeopleProfiles extends javax.swing.JFrame {
 
         finisherTF.setText("1-30");
 
+        commentsTF.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         commentsTF.setText("Write your comment here...");
 
         viewPersonsTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -144,6 +154,9 @@ public class PeopleProfiles extends javax.swing.JFrame {
             }
         });
         viewTable.setViewportView(viewPersonsTable);
+        if (viewPersonsTable.getColumnModel().getColumnCount() > 0) {
+            viewPersonsTable.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -178,17 +191,19 @@ public class PeopleProfiles extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(commentsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(viewAddButton)
+                                .addComponent(AddButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(viewEditButton)
+                                .addComponent(EditButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(viewDeleteButton))))
+                                .addComponent(DeleteButton))))
                     .addComponent(viewTable, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(viewSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -218,22 +233,23 @@ public class PeopleProfiles extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(comments)
                             .addComponent(commentsTF, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewAddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewEditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(viewDeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(DeleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(11, 11, 11)
                 .addComponent(viewTable, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(viewSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(loadButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(printButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewEditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEditButtonActionPerformed
+    private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
     model.setValueAt(nameTF.getText(), viewPersonsTable.getSelectedRow(), 0);
     model.setValueAt(administratorTF.getText(), viewPersonsTable.getSelectedRow(), 1);
     model.setValueAt(analystTF.getText(), viewPersonsTable.getSelectedRow(), 2);
@@ -241,11 +257,11 @@ public class PeopleProfiles extends javax.swing.JFrame {
     model.setValueAt(finisherTF.getText(), viewPersonsTable.getSelectedRow(), 4);
     model.setValueAt(commentsTF.getText(), viewPersonsTable.getSelectedRow(), 5);
     
-    }//GEN-LAST:event_viewEditButtonActionPerformed
+    }//GEN-LAST:event_EditButtonActionPerformed
 
-    private void viewAddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewAddButtonActionPerformed
+    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         model.insertRow(model.getRowCount(), new Object[]{nameTF.getText(), administratorTF.getText(), analystTF.getText(), creativeTF.getText(), finisherTF.getText(), commentsTF.getText()});
-    }//GEN-LAST:event_viewAddButtonActionPerformed
+    }//GEN-LAST:event_AddButtonActionPerformed
 
     private void loadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadButtonActionPerformed
         // TODO add your handling code here:
@@ -260,17 +276,21 @@ public class PeopleProfiles extends javax.swing.JFrame {
     }//GEN-LAST:event_creativeTFActionPerformed
 
     private void viewPersonsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPersonsTableMouseClicked
-   nameTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 0)));
-   administratorTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 1)));
+    nameTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 0)));
+    administratorTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 1)));
     analystTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 2)));
     creativeTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 3)));
     finisherTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 4)));
     commentsTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 5)));
     }//GEN-LAST:event_viewPersonsTableMouseClicked
 
-    private void viewDeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDeleteButtonActionPerformed
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
     model.removeRow(viewPersonsTable.getSelectedRow());
-    }//GEN-LAST:event_viewDeleteButtonActionPerformed
+    }//GEN-LAST:event_DeleteButtonActionPerformed
+
+    private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_printButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -308,6 +328,10 @@ public class PeopleProfiles extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddButton;
+    private javax.swing.JButton DeleteButton;
+    private javax.swing.JButton EditButton;
+    private javax.swing.JButton SaveButton;
     private javax.swing.JLabel administrator;
     private javax.swing.JTextField administratorTF;
     private javax.swing.JLabel analyst;
@@ -322,11 +346,8 @@ public class PeopleProfiles extends javax.swing.JFrame {
     private javax.swing.JLabel name;
     private javax.swing.JTextField nameTF;
     private javax.swing.JLabel personProfiles;
-    private javax.swing.JButton viewAddButton;
-    private javax.swing.JButton viewDeleteButton;
-    private javax.swing.JButton viewEditButton;
+    private javax.swing.JButton printButton;
     private javax.swing.JTable viewPersonsTable;
-    private javax.swing.JButton viewSaveButton;
     private javax.swing.JScrollPane viewTable;
     // End of variables declaration//GEN-END:variables
 }

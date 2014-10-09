@@ -18,29 +18,33 @@ public class Person
     private int finisher;
     private int analyzer;
     private int creator;
+    private String comment;
 
     @Override
     public String toString()
     {
-        return name + "," + admin + "," + finisher + "," + analyzer + "," + creator ;
+        return name + "," + admin + "," + finisher + "," + analyzer + "," + creator + "," + comment;
     }   
     
-    public Person( String specialPeopleString ) { //"Bob,12,12,5,6"        
+    public Person( String specialPeopleString ) { //"Bob,12,12,5,6,I like cake"        
         String[] splited = specialPeopleString.split(",");//splited[0] = "Bob"
         name = splited[0]; //"Bob"
         admin = Integer.parseInt( splited[1] ); 
         finisher = Integer.parseInt( splited[2] ); 
         analyzer = Integer.parseInt( splited[3] ); 
-        creator = Integer.parseInt( splited[4] ); 
+        creator = Integer.parseInt( splited[4] );
+        comment = splited[5];
     }
-    
-    public Person(String name, int admin, int finisher, int analyzer, int creator)
+
+   
+    public Person(String name, int admin, int finisher, int analyzer, int creator, String comment)
     {
         this.name = name;
         this.admin = admin;
         this.finisher = finisher;
         this.analyzer = analyzer;
         this.creator = creator;
+        this.comment = comment;
     }
 
     
@@ -94,6 +98,13 @@ public class Person
         this.creator = creator;
     }
     
+     public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
     
     
     
