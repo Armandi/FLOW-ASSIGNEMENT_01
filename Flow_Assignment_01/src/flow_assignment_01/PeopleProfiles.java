@@ -5,6 +5,7 @@
  */
 package flow_assignment_01;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -93,6 +94,11 @@ public class PeopleProfiles extends javax.swing.JFrame {
         });
 
         SaveButton.setText("Save");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
+            }
+        });
 
         loadButton.setText("Load");
         loadButton.addActionListener(new java.awt.event.ActionListener() {
@@ -295,6 +301,15 @@ public class PeopleProfiles extends javax.swing.JFrame {
         } catch (java.awt.print.PrinterException e) {
             System.err.format("Cannot print %s%n", e.getMessage());
 }    }//GEN-LAST:event_printButtonActionPerformed
+
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+//        ArrayList<String> personList = new ArrayList<String>();
+//        String list = viewPersonsTable.selectAll();
+//        list.toString();
+//        personList.add(list);
+//        FileHandlerStat.savePersons(personList, "people.txt");
+
+    }//GEN-LAST:event_SaveButtonActionPerformed
 
     /**
      * @param args the command line arguments
