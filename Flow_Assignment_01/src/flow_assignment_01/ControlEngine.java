@@ -29,9 +29,8 @@ public class ControlEngine {
 
     public void addPerson(Person p) {
         persons.add(p);
-
     }
-
+    
     public void save() {
         ArrayList<String> saveArray = new ArrayList();
         for (Person person : persons) {

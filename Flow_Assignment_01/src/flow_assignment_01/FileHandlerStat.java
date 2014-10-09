@@ -37,6 +37,8 @@ public class FileHandlerStat {
      * file. If something goes wrong and an exception is raised this method will
      * return null!
      */
+    
+        
     public static ArrayList<String> load(String filename) {
         Scanner file_scanner = null;
         ArrayList<String> stringArray = new ArrayList<String>();
@@ -52,7 +54,6 @@ public class FileHandlerStat {
         while (file_scanner.hasNextLine()) {  //File found. Reading one line.             
             stringArray.add(file_scanner.nextLine());  //Reading in a single line and saving in the ArrayList
         }
-
         file_scanner.close();  //Closing the file
         return stringArray;    //returning the arraylist
     }
@@ -79,7 +80,7 @@ public class FileHandlerStat {
             for (String personline : stringArray) {   //running through the ArrayList.                    
                 output.write(personline.toString() + "\n");  //Each String object is written as a line in file.
             }
-
+  
             output.close();  //Closing the file
         } catch (Exception ex) {  //If something goes wrong everything is send to system out.
             System.out.println("Could not save to file!");
