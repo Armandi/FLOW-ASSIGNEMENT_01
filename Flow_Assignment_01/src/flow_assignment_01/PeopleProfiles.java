@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 public class PeopleProfiles extends javax.swing.JFrame {
 
     DefaultTableModel model;
+    ControlEngine controler = new ControlEngine();
 
     public PeopleProfiles() {
         initComponents();
@@ -116,23 +118,28 @@ public class PeopleProfiles extends javax.swing.JFrame {
 
         nameTF.setText("Name");
 
-        administratorTF.setText("1-30");
+        administratorTF.setText("30");
+        administratorTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                administratorTFActionPerformed(evt);
+            }
+        });
 
-        analystTF.setText("1-30");
+        analystTF.setText("30");
         analystTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 analystTFActionPerformed(evt);
             }
         });
 
-        creativeTF.setText("1-30");
+        creativeTF.setText("30");
         creativeTF.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 creativeTFActionPerformed(evt);
             }
         });
 
-        finisherTF.setText("1-30");
+        finisherTF.setText("30");
 
         commentsTF.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         commentsTF.setText("Write your comment here...");
@@ -266,10 +273,18 @@ public class PeopleProfiles extends javax.swing.JFrame {
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         model.insertRow(model.getRowCount(), new Object[]{nameTF.getText(), administratorTF.getText(), analystTF.getText(), creativeTF.getText(), finisherTF.getText(), commentsTF.getText()});
+        Person person = new Person(this.nameTF.getText(), Integer.parseInt(administratorTF.getText()), Integer.parseInt(analystTF.getText()), Integer.parseInt(creativeTF.getText()), Integer.parseInt(finisherTF.getText()), commentsTF.getText());
+        controler.addPerson(person);
     }//GEN-LAST:event_AddButtonActionPerformed
 
     private void loadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loadButtonActionPerformed
-        // TODO add your handling code here:
+        while (model.getRowCount() > 0) {
+            model.removeRow(0);
+        }
+        controler.load();
+        for (Person personen : controler.getPersons()) {
+            model.insertRow(model.getRowCount(), new Object[]{personen.getName(), personen.getAdmin(), personen.getAnalyzer(), personen.getCreator(), personen.getFinisher(), personen.getComment()});
+        }
     }//GEN-LAST:event_loadButtonActionPerformed
 
     private void analystTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_analystTFActionPerformed
@@ -303,13 +318,12 @@ public class PeopleProfiles extends javax.swing.JFrame {
 }    }//GEN-LAST:event_printButtonActionPerformed
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-//        ArrayList<String> personList = new ArrayList<String>();
-//        String list = viewPersonsTable.selectAll();
-//        list.toString();
-//        personList.add(list);
-//        FileHandlerStat.savePersons(personList, "people.txt");
-
+        controler.save();
     }//GEN-LAST:event_SaveButtonActionPerformed
+
+    private void administratorTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administratorTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_administratorTFActionPerformed
 
     /**
      * @param args the command line arguments

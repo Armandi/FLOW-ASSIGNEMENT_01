@@ -1,1 +1,4 @@
-javax.swing.JTable[,0,0,771x128,alignmentX=0.0,alignmentY=0.0,border=javax.swing.plaf.synth.SynthBorder@14e5a8a3,flags=251658568,maximumSize=,minimumSize=,preferredSize=,autoCreateColumnsFromModel=true,autoResizeMode=AUTO_RESIZE_SUBSEQUENT_COLUMNS,cellSelectionEnabled=false,editingColumn=-1,editingRow=-1,gridColor=javax.swing.plaf.ColorUIResource[r=35,g=35,b=36],preferredViewportSize=java.awt.Dimension[width=450,height=400],rowHeight=16,rowMargin=0,rowSelectionAllowed=true,selectionBackground=DerivedColor(color=57,105,138 parent=nimbusSelectionBackground offsets=0.0,0.0,0.0,0 pColor=57,105,138,selectionForeground=DerivedColor(color=255,255,255 parent=nimbusLightBackground offsets=0.0,0.0,0.0,0 pColor=255,255,255,showHorizontalLines=false,showVerticalLines=false]
+Bob,12,4,5,6,I like cake
+Linda,4,12,5,6,I like cake
+Zebra,55,212,25,26,I like cake
+Anton,12,12,4,2,I like cake

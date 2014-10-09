@@ -226,12 +226,15 @@
     </Component>
     <Component class="javax.swing.JTextField" name="administratorTF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="1-30"/>
+        <Property name="text" type="java.lang.String" value="30"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="administratorTFActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="analystTF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="1-30"/>
+        <Property name="text" type="java.lang.String" value="30"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="analystTFActionPerformed"/>
@@ -239,7 +242,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="creativeTF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="1-30"/>
+        <Property name="text" type="java.lang.String" value="30"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="creativeTFActionPerformed"/>
@@ -247,7 +250,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="finisherTF">
       <Properties>
-        <Property name="text" type="java.lang.String" value="1-30"/>
+        <Property name="text" type="java.lang.String" value="30"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="commentsTF">

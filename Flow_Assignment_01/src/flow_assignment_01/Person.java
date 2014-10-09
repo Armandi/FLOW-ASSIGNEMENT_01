@@ -3,15 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package flow_assignment_01;
 
 /**
  *
  * @author Armandi
  */
-public class Person
-{
+public class Person {
+
     //Atributes:  Alt + insert auto generate code:
     private String name;
     private int admin;
@@ -21,24 +20,21 @@ public class Person
     private String comment;
 
     @Override
-    public String toString()
-    {
+    public String toString() {
         return name + "," + admin + "," + finisher + "," + analyzer + "," + creator + "," + comment;
-    }   
-    
-    public Person( String specialPeopleString ) { //"Bob,12,12,5,6,I like cake"        
+    }
+
+    public Person(String specialPeopleString) { //"Bob,12,12,5,6,I like cake"        
         String[] splited = specialPeopleString.split(",");//splited[0] = "Bob"
         name = splited[0]; //"Bob"
-        admin = Integer.parseInt( splited[1] ); 
-        finisher = Integer.parseInt( splited[2] ); 
-        analyzer = Integer.parseInt( splited[3] ); 
-        creator = Integer.parseInt( splited[4] );
+        admin = Integer.parseInt(splited[1]);
+        finisher = Integer.parseInt(splited[2]);
+        analyzer = Integer.parseInt(splited[3]);
+        creator = Integer.parseInt(splited[4]);
         comment = splited[5];
     }
 
-   
-    public Person(String name, int admin, int finisher, int analyzer, int creator, String comment)
-    {
+    public Person(String name, int admin, int finisher, int analyzer, int creator, String comment) {
         this.name = name;
         this.admin = admin;
         this.finisher = finisher;
@@ -47,65 +43,52 @@ public class Person
         this.comment = comment;
     }
 
-    
-    public String getName()
-    {
+    public String getName() {
         return name;
     }
-    
-    public void setName(String name)
-    {
+
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getAdmin()
-    {
+    public int getAdmin() {
         return admin;
     }
 
-    public void setAdmin(int admin)
-    {
+    public void setAdmin(int admin) {
         this.admin = admin;
     }
 
-    public int getFinisher()
-    {
+    public int getFinisher() {
         return finisher;
     }
 
-    public void setFinisher(int finisher)
-    {
+    public void setFinisher(int finisher) {
         this.finisher = finisher;
     }
 
-    public int getAnalyzer()
-    {
+    public int getAnalyzer() {
         return analyzer;
     }
 
-    public void setAnalyzer(int analyzer)
-    {
+    public void setAnalyzer(int analyzer) {
         this.analyzer = analyzer;
     }
 
-    public int getCreator()
-    {
+    public int getCreator() {
         return creator;
     }
 
-    public void setCreator(int creator)
-    {
+    public void setCreator(int creator) {
         this.creator = creator;
     }
-    
-     public String getComment() {
+
+    public String getComment() {
         return comment;
     }
 
     public void setComment(String comment) {
         this.comment = comment;
     }
-    
-    
-    
+
 }
