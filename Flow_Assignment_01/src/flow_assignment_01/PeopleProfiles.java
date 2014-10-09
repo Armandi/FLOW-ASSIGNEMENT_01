@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package flow_assignment_01;
 
 import javax.swing.JOptionPane;
@@ -15,13 +14,13 @@ import javax.swing.table.DefaultTableModel;
  */
 public class PeopleProfiles extends javax.swing.JFrame {
 
-   DefaultTableModel model;
-   
+    DefaultTableModel model;
+
     public PeopleProfiles() {
         initComponents();
-        model = (DefaultTableModel)viewPersonsTable.getModel();
+        model = (DefaultTableModel) viewPersonsTable.getModel();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -250,13 +249,13 @@ public class PeopleProfiles extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EditButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditButtonActionPerformed
-    model.setValueAt(nameTF.getText(), viewPersonsTable.getSelectedRow(), 0);
-    model.setValueAt(administratorTF.getText(), viewPersonsTable.getSelectedRow(), 1);
-    model.setValueAt(analystTF.getText(), viewPersonsTable.getSelectedRow(), 2);
-    model.setValueAt(creativeTF.getText(), viewPersonsTable.getSelectedRow(), 3);
-    model.setValueAt(finisherTF.getText(), viewPersonsTable.getSelectedRow(), 4);
-    model.setValueAt(commentsTF.getText(), viewPersonsTable.getSelectedRow(), 5);
-    
+        model.setValueAt(nameTF.getText(), viewPersonsTable.getSelectedRow(), 0);
+        model.setValueAt(administratorTF.getText(), viewPersonsTable.getSelectedRow(), 1);
+        model.setValueAt(analystTF.getText(), viewPersonsTable.getSelectedRow(), 2);
+        model.setValueAt(creativeTF.getText(), viewPersonsTable.getSelectedRow(), 3);
+        model.setValueAt(finisherTF.getText(), viewPersonsTable.getSelectedRow(), 4);
+        model.setValueAt(commentsTF.getText(), viewPersonsTable.getSelectedRow(), 5);
+
     }//GEN-LAST:event_EditButtonActionPerformed
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
@@ -276,21 +275,26 @@ public class PeopleProfiles extends javax.swing.JFrame {
     }//GEN-LAST:event_creativeTFActionPerformed
 
     private void viewPersonsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewPersonsTableMouseClicked
-    nameTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 0)));
-    administratorTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 1)));
-    analystTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 2)));
-    creativeTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 3)));
-    finisherTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 4)));
-    commentsTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 5)));
+        nameTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 0)));
+        administratorTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 1)));
+        analystTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 2)));
+        creativeTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 3)));
+        finisherTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 4)));
+        commentsTF.setText(String.valueOf(model.getValueAt(viewPersonsTable.getSelectedRow(), 5)));
     }//GEN-LAST:event_viewPersonsTableMouseClicked
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
-    model.removeRow(viewPersonsTable.getSelectedRow());
+        model.removeRow(viewPersonsTable.getSelectedRow());
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
     private void printButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_printButtonActionPerformed
+        try {
+            if (!viewPersonsTable.print()) {
+                System.err.println("User cancelled printing");
+            }
+        } catch (java.awt.print.PrinterException e) {
+            System.err.format("Cannot print %s%n", e.getMessage());
+}    }//GEN-LAST:event_printButtonActionPerformed
 
     /**
      * @param args the command line arguments
