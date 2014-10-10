@@ -268,7 +268,6 @@ public class PeopleProfiles extends javax.swing.JFrame {
         model.setValueAt(creativeTF.getText(), viewPersonsTable.getSelectedRow(), 3);
         model.setValueAt(finisherTF.getText(), viewPersonsTable.getSelectedRow(), 4);
         model.setValueAt(commentsTF.getText(), viewPersonsTable.getSelectedRow(), 5);
-
     }//GEN-LAST:event_EditButtonActionPerformed
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
@@ -319,16 +318,17 @@ public class PeopleProfiles extends javax.swing.JFrame {
 
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         Object[] options = {"Yes",
-                "No"};
-            int n = JOptionPane.showOptionDialog(null, "Would you like to save? \nTHIS WILL OWERWRITE YOUR CURRENT FILE!"
-                    + "",
-                    "", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
-                    null, options, options[1]);
-            
-            System.out.println(n);
-            
-            if (n == JOptionPane.YES_OPTION) { controler.save(); JOptionPane.showMessageDialog(null, "File Saved!");
-            } else {}
+            "No"};
+        int n = JOptionPane.showOptionDialog(null, "Would you like to save? \nTHIS WILL OWERWRITE YOUR CURRENT FILE!"
+                + "",
+                "", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE,
+                null, options, options[1]);
+
+        if (n == JOptionPane.YES_OPTION) {
+            controler.save();
+            JOptionPane.showMessageDialog(null, "File Saved!");
+        } else {
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
 
     private void administratorTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_administratorTFActionPerformed
