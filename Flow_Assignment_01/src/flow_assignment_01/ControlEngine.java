@@ -40,7 +40,7 @@ public class ControlEngine {
         }
         FileHandlerStat.savePersons(editArray, "TableFile.txt");
     }
-
+        
     public void addPerson(Person p) {
         persons.add(p);
     }
@@ -48,7 +48,7 @@ public class ControlEngine {
     public void save() {
         try {
             ArrayList<String> saveArray = new ArrayList();
-            Path toDelete = Paths.get("C:/Users/Jonas/Documents/GitHub/FLOW-ASSIGNEMENT_01/Flow_Assignment_01/TableFile.txt");
+            Path toDelete = Paths.get("TableFile.txt");
             Files.delete(toDelete);
             for (Person person : persons) {
                 saveArray.add(person.toString());
