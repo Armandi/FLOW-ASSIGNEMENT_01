@@ -1,15 +1,10 @@
 package flow_assignment_01;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * This class handles writing to and from file.
@@ -21,10 +16,10 @@ import java.util.logging.Logger;
  * EXAMPLE OF SAVING TO FILE: ArrayList<String> as = new ArrayList<String>();
  * as.add("Peter,3,8,12,13"); as.add("Linda,18,2,4,5"); as.add("Bob,8,12,4,6");
  *
- * FileHandlerStat.savePersons(as, "persons.txt"); * EXAMPLE OF LOADING FROM
- * FILE: ArrayList<String> outof = new ArrayList<String>(); outof =
- * FileHandlerStat.load("persons.txt"); for (String line : outof) {
- * System.out.println("Person: " + line); }
+ * FileHandlerStat.savePersons(as, "persons.txt");  *
+ * EXAMPLE OF LOADING FROM FILE: ArrayList<String> outof = new
+ * ArrayList<String>(); outof = FileHandlerStat.load("persons.txt"); for (String
+ * line : outof) { System.out.println("Person: " + line); }
  *
  * @author Peter Lorensen
  */
@@ -42,48 +37,27 @@ public class FileHandlerStat {
      * file. If something goes wrong and an exception is raised this method will
      * return null!
      */
-    public static ArrayList<String> newLoad(String filename) {
-        BufferedReader get = null;
+    
+        
+    public static ArrayList<String> load(String filename) {
+        Scanner file_scanner = null;
         ArrayList<String> stringArray = new ArrayList<String>();
+
         try {
-            get = new BufferedReader(new FileReader(filename));
-            String text;
-            while ((text = get.readLine()) != null) {
-                stringArray.add(text);
-            }
+            file_scanner = new Scanner(new File(filename));  //Connection to the file using the Scanner object
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(FileHandlerStat.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(FileHandlerStat.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            try {
-                get.close();
-            } catch (IOException ex) {
-                Logger.getLogger(FileHandlerStat.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            System.out.println("Could not find the file to load from! Returning null.");
+            ex.printStackTrace();
+            return null;  //If something goes wrong the method returns null
         }
-        return stringArray;
+
+        while (file_scanner.hasNextLine()) {  //File found. Reading one line.             
+            stringArray.add(file_scanner.nextLine());  //Reading in a single line and saving in the ArrayList
+        }
+        file_scanner.close();  //Closing the file
+        return stringArray;    //returning the arraylist
     }
 
-//    public static ArrayList<String> load(String filename) {
-//
-//        Scanner file_scanner = null;
-//        ArrayList<String> stringArray = new ArrayList<String>();
-//
-//        try {
-//            file_scanner = new Scanner(new File(filename));  //Connection to the file using the Scanner object
-//        } catch (FileNotFoundException ex) {
-//            System.out.println("Could not find the file to load from! Returning null.");
-//            ex.printStackTrace();
-//            return null;  //If something goes wrong the method returns null
-//        }
-//
-//        while (file_scanner.hasNextLine()) {  //File found. Reading one line.             
-//            stringArray.add(file_scanner.nextLine());  //Reading in a single line and saving in the ArrayList
-//        }
-//        file_scanner.close();  //Closing the file
-//        return stringArray;    //returning the arraylist
-//    }
     /**
      * This method saves an ArrayList of strings to disk. Each string object in
      * this array will be one line in the text file. The text file is
@@ -99,10 +73,6 @@ public class FileHandlerStat {
         if (stringArray == null) {
             return false;
         }  //Checking parameter for null.
-
-        File remove = new File(filename);
-        remove.delete();
-
         FileWriter output;  //Creating reference for filewriter.
 
         try {
@@ -110,7 +80,7 @@ public class FileHandlerStat {
             for (String personline : stringArray) {   //running through the ArrayList.                    
                 output.write(personline.toString() + "\n");  //Each String object is written as a line in file.
             }
-
+  
             output.close();  //Closing the file
         } catch (Exception ex) {  //If something goes wrong everything is send to system out.
             System.out.println("Could not save to file!");

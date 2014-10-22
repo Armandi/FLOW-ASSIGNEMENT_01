@@ -26,7 +26,7 @@ public class ControlEngine {
 
     public void load() {
         persons.clear();
-        ArrayList<String> loadArray = FileHandlerStat.newLoad("TableFile.txt");
+        ArrayList<String> loadArray = FileHandlerStat.load("TableFile.txt");
         for (String string : loadArray) {
             Person person = new Person(string);
             persons.add(person);
@@ -40,11 +40,11 @@ public class ControlEngine {
         }
         FileHandlerStat.savePersons(editArray, "TableFile.txt");
     }
-        
+       
     public void addPerson(Person p) {
         persons.add(p);
     }
-
+    
     public void save() {
         try {
             ArrayList<String> saveArray = new ArrayList();
@@ -57,7 +57,7 @@ public class ControlEngine {
         } catch (IOException ex) {
             Logger.getLogger(ControlEngine.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+}
 
     public ArrayList<Person> getPersons() {
         return persons;
